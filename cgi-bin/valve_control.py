@@ -1,5 +1,5 @@
 import cgi
-import cgitb; cgitb.enable()
+import cgitb; cgitb.enable(display=0, logdir="/path/to/logdir")
 import sys
 import RPi.GPIO as io
 from time import sleep
