@@ -24,7 +24,7 @@ print "<body>"
 
 print """
     <div style="margin-left:40px; margin-right:5%%; font-size:18px; font-family:Hoefler Text, 'Times New Roman';">
-        <p>Your order %s is now being made!<p>
+        <p>Your order %s is now being complete!<p>
     <div>
 """ % order
 
@@ -35,7 +35,7 @@ io = pigpio.pi()
 
 io.write(18, 1)
 
-sleep(2000)
+sleep(2)
 
 io.write(18, 0)
 
