@@ -5,7 +5,6 @@ import cgitb; cgitb.enable(display=0, logdir="/path/to/logdir")
 import sys
 import pigpio
 from time import sleep
-io.setmode(io.BCM)
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
