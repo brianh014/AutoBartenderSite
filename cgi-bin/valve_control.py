@@ -51,7 +51,7 @@ if busy["busy"] == "false":
 	io.write(18, 1)
 	sleep(2)
 	io.write(18, 0)
-	busy["busy"] = "false":
+	busy["busy"] = "false"
 	json.dump(busy, file)
 	file.close()
 
