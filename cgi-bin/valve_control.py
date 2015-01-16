@@ -44,7 +44,7 @@ print "</html>"
 
 
 if busy["busy"] == "false":
-	busy["busy"] = "true":
+	busy["busy"] == "true":
 	json.dump(busy, file)
 	
 	io = pigpio.pi()
