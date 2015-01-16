@@ -18,7 +18,7 @@ print """
 form = cgi.FieldStorage()
 order = form.getvalue('drink')
 
-print "<title>WikiBot Results</title>"
+print "<title>Auto-Bartender</title>"
 print "</head>"
 print "<body>"
 
@@ -34,4 +34,8 @@ print "</html>"
 io = pigpio.pi()
 
 io.write(18, 1)
+
+sleep(2000)
+
+io.write(18, 0)
 
