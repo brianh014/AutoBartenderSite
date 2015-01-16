@@ -3,7 +3,7 @@
 import cgi
 import cgitb; cgitb.enable(display=0, logdir="/path/to/logdir")
 import sys
-import RPi.GPIO as io
+import pigpio
 from time import sleep
 io.setmode(io.BCM)
 
@@ -32,9 +32,7 @@ print """
 print "</body>"
 print "</html>"
 
-v1 = 18
+io = pigpio.pi()
 
-io.setup(v1, io.OUT)
-
-io.output(v1, True)
+io.write(18, 1)
 
