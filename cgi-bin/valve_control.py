@@ -19,8 +19,9 @@ print """
 form = cgi.FieldStorage()
 order = form.getvalue('drink')
 
-file = open("busy.json")
+file = open("busy.json", "r")
 busy = json.load(file)
+file.close()
 
 print "<title>Auto-Bartender</title>"
 print "</head>"
@@ -45,14 +46,17 @@ print "</html>"
 
 if busy["busy"] == "false":
 	busy["busy"] = "true"
+	file = open("busy.json", "w")
 	json.dump(busy, file)
+	file.close()
 	
 	io = pigpio.pi()
 	io.write(18, 1)
 	sleep(2)
 	io.write(18, 0)
+
 	busy["busy"] = "false"
+	file = open("busy.json", "w")
 	json.dump(busy, file)
 	file.close()
-
 
